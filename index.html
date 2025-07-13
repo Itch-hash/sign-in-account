@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-in</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <form class="form">
+        <p class="form-title">Sign in to your account</p>
+
+        <div class="input-container">
+            <input type="email" id="email" placeholder="Enter email" required>
+            <span>
+            </span>
+        </div>
+        <div class="input-container">
+            <input type="password" id="password" placeholder="Enter password" required>
+        </div>
+        <button type="button" class="submit" onclick="handleSignIn()">
+            Sign in
+        </button>
+
+        <p class="signup-link">
+            No account?
+            <a href="/sign-up.html">Sign up</a>
+        </p>
+    </form>
+</body>
+<script src="/script.js"></script>
+
+</html>
