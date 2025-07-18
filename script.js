@@ -1,16 +1,12 @@
-function handleSignUp() {
+function handleSignUp(event) {
+  event.preventDefault();
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
   const users = JSON.parse(localStorage.getItem("users")) || [];
   const foundUser = users.find((user) => user.email === email);
-  if (name === "" || email === "" || password === "") {
-    return window.alert("Please insert all required data");
-  }
-  if (!email.includes("@") || !email.includes(".")) {
-    return alert("Please check your e-mail and try again!");
-  }
+
   if (!foundUser) {
     users.push({ name: name, email: email, password: password });
     localStorage.setItem("users", JSON.stringify(users));
@@ -18,7 +14,8 @@ function handleSignUp() {
   } else return window.alert("Email is already registered");
 }
 
-function handleSignIn() {
+function handleSignIn(event) {
+  event.preventDefault();
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
@@ -27,12 +24,6 @@ function handleSignIn() {
   const foundUser = users.find(
     (user) => user.email == email && user.password == password
   );
-  if (email === "" || password === "") {
-    return window.alert("Please insert all required data");
-  }
-  if (!email.includes("@") || !email.includes(".")) {
-    return alert("Please check your e-mail and try again!");
-  }
 
   foundUser
     ? window.alert(`Welcome back ${foundUser.name}`)

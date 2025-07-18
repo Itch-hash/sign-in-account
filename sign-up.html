@@ -9,23 +9,23 @@
 </head>
 
 <body>
-    <form class="form">
+    <form class="form" onsubmit="handleSignUp(event)">
         <p class="form-title">Register your account</p>
         <p class="form-title" id="registered" style="color: green; display: none;">Account Registered!</p>
         <div class="input-container">
-            <input for="name" type="name" id="name" placeholder="Enter name">
+            <input for="name" type="name" id="name" placeholder="Enter name" required>
             <span>
             </span>
         </div>
         <div class="input-container">
-            <input type="email" id="email" placeholder="Enter email">
+            <input type="email" id="email" placeholder="Enter email" required>
             <span>
             </span>
         </div>
         <div class="input-container">
-            <input type="password" id="password" placeholder="Choose a password">
+            <input type="password" id="password" minlength="8" maxlength="12" placeholder="Choose a password" required>
         </div>
-        <button type="button" class="submit" onclick="handleSignUp()">
+        <button type="submit" class="submit">
             Register
         </button>
 
